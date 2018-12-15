@@ -8,7 +8,7 @@
 
     char* reverseWithinBounds(char *cstring, int lowerBound, int upperBound);
        pre:  the lower and upper bounds are both higher than zero and less than
-             the size of the c-string.  Also the lower bound has to be lower than
+             the size of the c-string.  The lower bound also has to be lower than
              the upper bound.
 
        post: returns a pointer to a c-string that is sorted in reverse order
@@ -31,13 +31,22 @@ int main(){
     char word2[] = "1234567";
 
     std::cout << "Reverse '12345678' from 2 to 7: " << reverseWithinBounds(word1, 2, 7) << std::endl;
-
 }
+
+
+
+
+
 
 char* reverseCstring(char *cstring ) {
     int upperBound = strlen(cstring) - 1;
     return reverseWithinBounds(cstring, 0, upperBound);
 }
+
+
+
+
+
 
 char* reverseWithinBounds(char *cstring, int lowerBound, int upperBound){
     if(upperBound - lowerBound < 0){
@@ -49,3 +58,9 @@ char* reverseWithinBounds(char *cstring, int lowerBound, int upperBound){
         return reverseWithinBounds(cstring, lowerBound + 1, upperBound -1);
     }
 }
+
+
+/****************************************
+OUTPUT:
+Reverse '12345678' from 2 to 7: 12876543
+****************************************/
